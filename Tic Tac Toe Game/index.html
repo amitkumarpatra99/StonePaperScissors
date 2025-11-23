@@ -1,37 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Tic Tac Toe</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="msg-container hide">
-        <p id="msg">Winner</p>
-        <button id="new-btn">New Game</button>
-    </div>
-    <main>
-        <h1>Tic-Tac -Toe</h1>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
+
+  <button class="sound-toggle" id="soundBtn" title="Toggle Sound">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-4 0h-2.5l-5 5H2v6h2.5l5 5V3.23zm2.5 0v17.54l-5-5H6.5V8.23h2.5l5-5z"/>
+    </svg>
+  </button>
+
+  <div class="app-container">
+    
+    <section class="game-area glass-panel">
+      <div class="header">
+        <h1>TIC TAC TOE</h1>
+        <div class="status-badge" id="status">Start Game</div>
+      </div>
+
+      <div class="board" id="board">
         </div>
-        <button id="reset-btn">Reset Game</button>
-    </main>
 
-    <script src="script.js"></script>
+      <div class="scoreboard">
+        <div class="score-card">
+          <div class="score-val" id="scoreHuman">0</div>
+          <div class="score-label">Player</div>
+        </div>
+        <div class="score-card">
+          <div class="score-val" id="scoreTie">0</div>
+          <div class="score-label">Draws</div>
+        </div>
+        <div class="score-card">
+          <div class="score-val" id="scoreAI">0</div>
+          <div class="score-label">AI Bot</div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar glass-panel">
+      
+      <button class="btn btn-primary" id="newGame">NEW ROUND</button>
+
+      <div class="control-group">
+        <span class="control-label">Your Side</span>
+        <div class="switch-row">
+          <button class="btn switch-btn active" id="chooseX">X</button>
+          <button class="btn switch-btn" id="chooseO">O</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">AI Level</span>
+        <select id="difficulty">
+          <option value="1">Novice (Random)</option>
+          <option value="2" selected>Veteran (Smart)</option>
+          <option value="3">God Mode (Unbeatable)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">AI Speed</span>
+        <input type="range" id="animSpeed" min="100" max="800" value="400">
+      </div>
+
+      <div style="margin-top:auto; display:flex; gap:10px;">
+        <button class="btn" id="undoBtn" style="flex:1">Undo</button>
+        <button class="btn" id="resetScore" style="flex:1">Reset</button>
+      </div>
+
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
