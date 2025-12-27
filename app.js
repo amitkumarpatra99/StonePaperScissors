@@ -15,7 +15,7 @@ const genCompChoice = () => {
 
 const drawGame = () => {
     msg.innerText = "Game was Draw. Play again.";
-    msg.style.backgroundColor = "#081b31";
+    msg.style.backgroundColor = "#475569";
 };
 
 // Pass userChoice and compChoice here so we can print them in the message
@@ -23,19 +23,19 @@ const showWinner = (userWin, userChoice, compChoice) => {
     if (userWin) {
         userScore++;
         userScorePara.innerText = userScore;
-        
+
         // Modern Message: showing what beat what
         msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`;
-        
+
         // Modern Green Color
-        msg.style.backgroundColor = "#10b981"; 
+        msg.style.backgroundColor = "#10b981";
     } else {
         compScore++;
         compScorePara.innerText = compScore;
-        
+
         // Modern Message
         msg.innerText = `You Lost. ${compChoice} beats your ${userChoice}`;
-        
+
         // Modern Red Color
         msg.style.backgroundColor = "#ef4444";
     }
@@ -59,7 +59,7 @@ const playGame = (userChoice) => {
             // rock, paper
             userWin = compChoice === "rock" ? false : true;
         }
-        
+
         // Pass all three arguments to the function
         showWinner(userWin, userChoice, compChoice);
     }
