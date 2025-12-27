@@ -127,3 +127,69 @@ img {
     letter-spacing: 1px;
     transition: transform 0.2s ease;
 }
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    h1 {
+        font-size: 1.8rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .choices {
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .choice {
+        height: 130px;
+        width: 130px;
+    }
+
+    img {
+        height: 110px;
+        width: 110px;
+    }
+
+    .score-board {
+        gap: 2rem;
+        margin-top: 2rem;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 3rem;
+    }
+
+    .msg-container {
+        margin-top: 2rem;
+    }
+
+    #msg {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .choices {
+        gap: 1rem;
+    }
+
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 2.5rem;
+    }
+}
